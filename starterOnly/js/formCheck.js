@@ -1,7 +1,7 @@
 // DATA
 
 //Dom elements
-const form = document.getElementById("modalForm");
+const main = document.querySelector("main");
 
 const firstName = document.getElementById("first");
 const lastName = document.getElementById("last");
@@ -15,7 +15,7 @@ const newsletter = document.getElementById("checkbox2");
 
 let elementCheck = "";
 
-const submit = document.getElementById("submit"); // => faire une fonction qui recheck tout quand on appuie sur le boutton validé
+const submit = document.getElementById("submit");
 
 //Regex
 const regexName =
@@ -125,10 +125,25 @@ const checkForm = () => {
     data.append("right", true);
     data.append("newsletter", newsletter.checked);
 
-    const validation = document.createElement("p");
-    validation.classList.add("form-submitted");
-    validation.textContent = "Formulaire envoyé !";
-    form.append(validation);
+    modalbg.style.display = "none";
+
+    const validation = document.createElement("div");
+    validation.id = "validation";
+    const content = document.createElement("div");
+    validation.appendChild(content);
+    content.classList.add("content");
+    const close = document.createElement("span");
+    content.appendChild(close);
+    close.classList.add("close");
+    close.id = "close";
+    const text = document.createElement("p");
+    content.appendChild(text);
+    text.textContent = "Formulaire envoyé !";
+    console.log(validation);
+    main.append(validation);
+    close.addEventListener("click", (e) => {
+      validation.remove();
+    });
     return console.log(...data);
   }
 };
