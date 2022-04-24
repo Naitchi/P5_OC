@@ -20,6 +20,12 @@ body {
   margin: 0 auto;
 }
 
+#content{
+  text-align: center;
+  margin-top: 30%;
+  padding: 100px 0;
+}
+
 #validation{
   position: fixed;
   z-index: 1;

@@ -130,16 +130,17 @@ const checkForm = () => {
     const validation = document.createElement("div");
     validation.id = "validation";
     const content = document.createElement("div");
-    validation.appendChild(content);
+    content.id = "content";
     content.classList.add("content");
     const close = document.createElement("span");
-    content.appendChild(close);
     close.classList.add("close");
     close.id = "close";
     const text = document.createElement("p");
-    content.appendChild(text);
     text.textContent = "Formulaire envoyé !";
     console.log(validation);
+    validation.appendChild(content);
+    content.appendChild(close);
+    content.appendChild(text);
     main.append(validation);
     close.addEventListener("click", (e) => {
       validation.remove();
