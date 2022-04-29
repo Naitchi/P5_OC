@@ -22,7 +22,6 @@ body {
 
 #content{
   text-align: center;
-  margin-top: 30%;
   padding: 100px 0;
 }
 
@@ -34,7 +33,11 @@ body {
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: rgba(26, 39, 156, 0.4)
+  background-color: rgba(26, 39, 156, 0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .form-submitted{

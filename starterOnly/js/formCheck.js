@@ -63,7 +63,7 @@ const checkDate = (el, msg) => {
 //check les input radio et récupere la valeur
 const checkRadioInput = (elements, msg) => {
   elements.forEach((el) => {
-    if (el.checked) elementCheck = el.value;
+    if (el.checked) elementCheck = el;
   });
   if (!elementCheck) {
     showTextError(elements, msg);
@@ -117,11 +117,17 @@ const checkForm = () => {
   if (validData === true) {
     const data = new FormData();
     data.append("firstname", firstName.value);
+    firstName.value = "";
     data.append("lastname", lastName.value);
+    lastName.value = "";
     data.append("email", email.value);
+    email.value = "";
     data.append("birthdate", birthdate.value);
+    birthdate.value = "null";
     data.append("qantity", qty.value);
-    data.append("location", elementCheck);
+    qty.value = "null";
+    data.append("location", elementCheck.value);
+    elementCheck.checked = false;
     data.append("right", true);
     data.append("newsletter", newsletter.checked);
 
