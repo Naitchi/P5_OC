@@ -146,7 +146,7 @@ const checkForm = () => {
     const btn = document.createElement("btn");
     btn.classList.add("btn-signup");
     btn.classList.add("modal-btn");
-    btn.content = "Fermer"
+    btn.innerText = "Fermer"
     console.log(validation);
     validation.appendChild(content);
     content.appendChild(close);
