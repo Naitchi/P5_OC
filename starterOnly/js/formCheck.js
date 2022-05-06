@@ -144,7 +144,8 @@ const checkForm = () => {
     const text = document.createElement("p");
     text.textContent = "Merci pour votre inscription";
     const btn = document.createElement("btn");
-    btn.classList.add("btn-signup modal-btn");
+    btn.classList.add("btn-signup");
+    btn.classList.add(" modal-btn");
     btn.content = "Fermer"
     console.log(validation);
     validation.appendChild(content);
