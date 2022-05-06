@@ -21,9 +21,13 @@ body {
 }
 
 #content{
+  height: 700px;
   text-align: center;
-  padding: 100px 0;
-}
+  display: flex;
+  padding: 100px 0 17px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;}
 
 #validation{
   position: fixed;

@@ -142,12 +142,19 @@ const checkForm = () => {
     close.classList.add("close");
     close.id = "close";
     const text = document.createElement("p");
-    text.textContent = "Formulaire envoyé !";
+    text.textContent = "Merci pour votre inscription";
+    const btn = document.createElement("btn");
+    btn.classList.add("btn-signup modal-btn");
+    btn.content = "Fermer"
     console.log(validation);
     validation.appendChild(content);
     content.appendChild(close);
     content.appendChild(text);
+    content.appendChild(btn)
     main.append(validation);
+    btn.addEventListener("click", (e) => {
+      validation.remove();
+    });
     close.addEventListener("click", (e) => {
       validation.remove();
     });
